@@ -1,5 +1,5 @@
-name: SamplePlugin
+name: RidingMe
 author: DarkBow_
 version: 1.0
-main: fr.darkbow_.sampleplugin.SamplePlugin
+main: fr.darkbow_.ridingme.RidingMe
 api-version: 1.16
