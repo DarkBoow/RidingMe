@@ -24,11 +24,13 @@ public class Events implements Listener {
             }
 
             if(action){
-                event.setCancelled(true);
-                main.getInvertriding().put(event.getMount(), event.getEntity());
-                if(!Task.isRunning){
-                    Task.isRunning = true;
-                    RidingMe.task = new Task(main.getInstance()).runTaskTimer(main.getInstance(), 1L, 1L);
+                if(!event.getMount().isInsideVehicle()){
+                    event.setCancelled(true);
+                    main.getInvertriding().put(event.getMount(), event.getEntity());
+                    if(!Task.isRunning){
+                        Task.isRunning = true;
+                        RidingMe.task = new Task(main.getInstance()).runTaskTimer(main.getInstance(), 1L, 1L);
+                    }
                 }
             }
         }

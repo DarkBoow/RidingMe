@@ -1,5 +1,6 @@
 package fr.darkbow_.ridingme;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -24,6 +25,13 @@ public class Task extends BukkitRunnable {
                     mounted = ridingmap.getValue().getPassengers().get(ridingmap.getValue().getPassengers().size() - 1);
                 } else {
                     mounted = ridingmap.getValue();
+                }
+
+                Entity vehicle = null;
+                if(ridingmap.getKey().isInsideVehicle() && ridingmap.getKey().getVehicle() != null){
+                    if(ridingmap.getKey().getVehicle() != ridingmap.getKey() && ridingmap.getKey().getVehicle() != ridingmap.getValue()){
+                        vehicle = ridingmap.getKey().getVehicle();
+                    }
                 }
                 mounted.addPassenger(ridingmap.getKey());
                 removelist.add(ridingmap.getKey());
