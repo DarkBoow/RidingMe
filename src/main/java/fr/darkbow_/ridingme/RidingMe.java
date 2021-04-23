@@ -31,7 +31,7 @@ public class RidingMe extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        System.out.println("[SamplePlugin] Plugin OFF!");
+        System.out.println("[RidingMe] Plugin OFF!");
     }
 
     public Map<Entity, Entity> getInvertriding() {
